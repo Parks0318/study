@@ -33,7 +33,7 @@ findByUsername()같은 메소드는 메소드 이름을 분석해더 JPQL을 실
 ```
 -----
  
- ####스프링 데이터 JPA가 사용하는 구현체 
+ #### 스프링 데이터 JPA가 사용하는 구현체 
  ```
 * @Repository 적용 : JPA 예외를 스프링이 추상화한 예외로 변환
 * @Transactional 트랜잭션 적용 : 
