@@ -100,7 +100,26 @@ Quartz + Batch : 정해진 스케줄마다 Quartz가 Spring Batch를 실행하�
     + order정렬 필수
     + fetchSize = chunkSize 유지
 
+  * ItemWriter
+    + Spring Batch에서 사용하는 출력기능
+    + Chunk 단위로 묶인 item List를 다룸
+    + JPA, Hibernate의 경우 ItemWriter 구현체에서 flush(), session.clear()가 따라옴
+  
+  * JpaItemWriter
+    + JPA를 사용하며 영속성 관리를 위해 EntityManager를 할당해야한다
+    + processor를 통해 Reader에서 읽은 데이터를 가공하여 Entity클래스 전달
+  
+  * ItemProcessor
+    + 필수가 아님
+    + 비즈니스 코드가 섞이는 것을 방지
+    + 각 계층 (읽기/처리/쓰기)를 분리하기 좋은 방법
+    + Reader에서 넘겨준 데이터 개별건을 가공/처리
+    + 크게 변환, 필터로 사용. (null을 반환하면 writer에 전달되지않음)
+    + ItemProcessor<{Reader에서 받을 타입}, {Writer에 보낼 타입}>. chunkSize 앞에 선언될 타입도 동일.
+    + 코드 양이 많아지면 별도 클래스로 Processor를 분리하기도함
+    
+  
 
-
+  
 [참고]
 https://jojoldu.tistory.com        
