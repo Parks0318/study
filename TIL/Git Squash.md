@@ -1,1 +1,1 @@
-Squash
+Git --Squash
