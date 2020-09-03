@@ -1,3 +1,3 @@
 Git --Squash
 test lol again w/ sourceTree
-another squash
+another squash 첫커밋잡기
