@@ -1,4 +1,4 @@
-##[작성중] @Transactional 
+##@Transactional 
     
 #### Isolation : 격리수준 옵션. 트랜젝션에서 일관성이 없는 데이터를 허용하도록 하는 수준
 ```    
